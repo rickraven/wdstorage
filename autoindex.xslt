@@ -116,18 +116,14 @@
 		        }, false);
 		    });
 
-		    document.querySelectorAll('table#contents tr td.actions ul li a[data-action]').forEach(el => {
+		    document.querySelectorAll('table#contents tr td.actions ul a[data-action="delete"]').forEach(el => {
 			el.addEventListener('click', function(e) {
                             e.preventDefault();
                             e.stopPropagation();
 
 			    var source = event.target || event.srcElement;
-			    var action = source.getAttribute('data-action');
 			    var href = source.getAttribute('href');
-
-			    if (action == 'delete') {
 				deleteFile(href);
-			    }
 
 			}, false);
 		    });
@@ -238,9 +234,9 @@
 		table#contents tr td.actions ul { list-style-type: none; margin: 0px; padding: 0px; visibility: hidden; }
 		table#contents tr td.actions ul li { float: left; }
 		table#contents tr:hover td.actions ul { visibility: visible; }
-		table#contents tr td.actions ul li a { display: inline; padding: 10px 10px 10px 10px !important; }
-		table#contents tr td.actions ul li a:hover[data-action='download'] { color: #25c900ff !important; }
-        table#contents tr td.actions ul li a:hover[data-action='delete'] { color: #c90000 !important; }
+		table#contents tr td.actions ul li a { display: inline; padding: 10px 10px 10px 30px !important; }
+		table#contents tr td.actions ul a:hover[data-action='download'] { color: #25c900ff !important; }
+        table#contents tr td.actions ul a:hover[data-action='delete'] { color: #c90000 !important; }
 		body.nowebdav table#contents tr td.actions ul { display: none !important; }
 
 		nav#breadcrumbs { margin-bottom: 50px; display: flex; justify-content: center; align-items: center; }

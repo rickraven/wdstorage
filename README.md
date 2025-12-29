@@ -26,9 +26,9 @@ Example `docker-compose.yml` for `wdstorage`:
 
 ```
 services:
-  webstorage:
-    image: rickraven/wdstorage:1.0
-    container_name: webstorage
+  wdstorage:
+    image: rickraven/wdstorage:1.1
+    container_name: wdstorage
     environment:
       - WDSTORAGE_WORKDIR=/data/mydata
     ports:
